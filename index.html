@@ -9,12 +9,14 @@
 </head>
 <body>
     <div id="particles-js"></div>
-    <div class="code-container">
-        <code id="code-text">
-            loadstring(game:HttpGet('https://raw.githubusercontent.com/flowsouthw/tidehub/main/scriptloader'))()
-        </code>
+    <div class="container">
+        <div class="code-container">
+            <code id="code-text">
+                loadstring(game:HttpGet('https://raw.githubusercontent.com/flowsouthw/tidehub/main/scriptloader'))()
+            </code>
+        </div>
+        <button onclick="copyToClipboard()">Copy Code to Clipboard</button>
     </div>
-    <button onclick="copyToClipboard()">Copy Code to Clipboard</button>
 
     <script>
         function copyToClipboard() {
