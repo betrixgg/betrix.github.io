@@ -10,7 +10,9 @@ body {
     flex-direction: column;
     overflow: hidden;
     position: relative;
+    text-align: center; /* Center text alignment */
 }
+
 .code-container {
     background-color: rgba(0, 0, 0, 0.7);
     padding: 20px;
@@ -20,8 +22,10 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     position: relative;
     z-index: 1;
-    max-width: 90%;  /* Limit width on small screens */
+    max-width: 100%; /* Make sure container width is 100% of its parent */
+    box-sizing: border-box; /* Include padding and border in width */
 }
+
 button {
     padding: 10px 20px;
     font-family: monospace;
@@ -36,15 +40,18 @@ button {
     position: relative;
     z-index: 1;
 }
+
 button:hover {
     background-color: #4b9cff;
     color: white;
     transform: scale(1.05);
 }
+
 button:active {
     background-color: #357ab8;
     color: white;
 }
+
 #particles-js {
     position: absolute;
     width: 100%;
@@ -57,7 +64,7 @@ button:active {
 @media (max-width: 768px) {
     .code-container {
         padding: 15px;
-        max-width: 95%;
+        margin-bottom: 15px;
     }
     button {
         padding: 8px 16px;
@@ -68,7 +75,7 @@ button:active {
 @media (max-width: 480px) {
     .code-container {
         padding: 10px;
-        max-width: 98%;
+        margin-bottom: 10px;
     }
     button {
         padding: 6px 12px;
