@@ -7,23 +7,26 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    flex-direction: column;
-    overflow: hidden;
+    overflow: hidden; /* Hide scrollbars to ensure no overflow */
     position: relative;
     text-align: center; /* Center text alignment */
+}
+
+.container {
+    position: relative;
+    width: 90vw; /* Width relative to viewport width */
+    max-width: 600px; /* Maximum width */
+    padding: 20px;
+    box-sizing: border-box; /* Include padding and border in width */
 }
 
 .code-container {
     background-color: rgba(0, 0, 0, 0.7);
     padding: 20px;
     border-radius: 10px;
-    text-align: center;
-    margin-bottom: 20px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    position: relative;
-    z-index: 1;
-    max-width: 100%; /* Make sure container width is 100% of its parent */
-    box-sizing: border-box; /* Include padding and border in width */
+    margin-bottom: 20px;
+    overflow-wrap: break-word; /* Handle long code lines */
 }
 
 button {
@@ -37,8 +40,6 @@ button {
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s, color 0.3s;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    position: relative;
-    z-index: 1;
 }
 
 button:hover {
@@ -62,9 +63,9 @@ button:active {
 
 /* Media queries for different screen sizes */
 @media (max-width: 768px) {
-    .code-container {
+    .container {
+        width: 90vw;
         padding: 15px;
-        margin-bottom: 15px;
     }
     button {
         padding: 8px 16px;
@@ -73,9 +74,9 @@ button:active {
 }
 
 @media (max-width: 480px) {
-    .code-container {
+    .container {
+        width: 95vw;
         padding: 10px;
-        margin-bottom: 10px;
     }
     button {
         padding: 6px 12px;
