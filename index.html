@@ -4,19 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Display</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background: black;
+            color: white;
+            font-family: monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+        }
+        .code-container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 1;
+            max-width: 90%;  /* Limit width on small screens */
+        }
+        button {
+            padding: 10px 20px;
+            font-family: monospace;
+            font-size: 14px;
+            background-color: #ffffff;
+            color: #4b9cff;
+            border: 2px solid #4b9cff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s, color 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+        button:hover {
+            background-color: #4b9cff;
+            color: white;
+            transform: scale(1.05);
+        }
+        button:active {
+            background-color: #357ab8;
+            color: white;
+        }
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #4b9cff;
+            z-index: 0;
+        }
+
+        /* Media queries for different screen sizes */
+        @media (max-width: 768px) {
+            .code-container {
+                padding: 15px;
+                max-width: 95%;
+            }
+            button {
+                padding: 8px 16px;
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .code-container {
+                padding: 10px;
+                max-width: 98%;
+            }
+            button {
+                padding: 6px 12px;
+                font-size: 10px;
+            }
+        }
+    </style>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
 <body>
     <div id="particles-js"></div>
-    <div class="container">
-        <div class="code-container">
-            <code id="code-text">
-                loadstring(game:HttpGet('https://raw.githubusercontent.com/flowsouthw/tidehub/main/scriptloader'))()
-            </code>
-        </div>
-        <button onclick="copyToClipboard()">Copy Code to Clipboard</button>
+    <div class="code-container">
+        <code id="code-text">
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/flowsouthw/tidehub/main/scriptloader'))()
+        </code>
     </div>
+    <button onclick="copyToClipboard()">Copy Code to Clipboard</button>
 
     <script>
         function copyToClipboard() {
